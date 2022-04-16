@@ -16,7 +16,7 @@ const ToggleButton = styled.div`
     width: 400px;
     height: 50px;
     border-radius: 40px;
-    background-color: #e4e4e4;
+    background-color: #EBEBEB;
     margin: 10px;
     cursor: pointer;
     display: flex;
@@ -29,6 +29,7 @@ const Mode = styled.div`
     font-size: 18px;
     font-weight: bold;
     z-index: 100;
+    color: ${props => props.isBasic ? "#000000" : "#ABABAB"}
 `;
 
 const ActiveBackground = styled.div`
