@@ -9,24 +9,22 @@ export default function Input() {
     const [errorMessage, setErrorMessage] = useState('');
     const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
+    const validator = (username, provider) => {
+        if (!(email.includes('@')) || username.length === 0 || provider.length === 0 || !(provider.includes('.')) || 
+        provider.split('.')[0].length === 0 || provider.split('.')[1].length === 0) return false
+        else return true
+    }
+
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
         const [username, provider] = email.split('@');
-        if (!(email.includes('@')) || username.length === 0 || provider.length === 0 || !(provider.includes('.')) || 
-            provider.split('.')[0].length === 0 || provider.split('.')[1].length === 0) {
-                setIsEmailValid(false);
-        } else {
-            setIsEmailValid(true);
-        }
+        if (validator(username, provider)) return setIsEmailValid(true);
+        else return setIsEmailValid(false);
     }
     const handleOnblur = (e) => {
         const [username, provider] = email.split('@');
-        if (!(email.includes('@')) || username.length === 0 || provider.length === 0 || !(provider.includes('.')) || 
-            provider.split('.')[0].length === 0 || provider.split('.')[1].length === 0) {
-                setErrorMessage('Invalid e-mail address.');
-        } else {
-            setErrorMessage('');
-        }
+        if (validator(username, provider)) return setErrorMessage('');
+        else return setErrorMessage('Invalid e-mail address.');
     }
 
     return (
