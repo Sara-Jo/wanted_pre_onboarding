@@ -1,4 +1,5 @@
 import './App.css';
+import styled from "styled-components";
 import Toggle from "./components/Toggle";
 import Tab from './components/Tab';
 import Slider from './components/Slider';
@@ -10,13 +11,21 @@ const dropdownItems = ["BTCUSD.PERP", "ETHUSD.PERP", "BCHUSD.PERP", "LTCUSD.PERP
 function App() {
   return (
     <div className="App">
+      <Container>
       <Toggle />
       <Tab />
       <Slider />
       <Input />
       <Dropdown items={dropdownItems}/>
+      </Container>
     </div>
   );
 }
 
 export default App;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

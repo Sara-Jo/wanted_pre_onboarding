@@ -27,10 +27,12 @@ export default function Dropdown({ items }) {
             </SelectItemBox>
             {toggle &&
                 <ItemsArea>
-                    <i><FiSearch size="13" color="#c4c4c4"/></i>
-                    <input type="text" value={inputText} onChange={handleInputText} placeholder="Search Symbol"/>
-                    <div id="All Symbols" onClick={clickItem}>All Symbols</div>
-                    {inputText ? searchedItems.map((item) => <div id={item} onClick={clickItem}>{item}</div>) : items.map((item) => <div id={item} onClick={clickItem}>{item}</div>)}
+                    <InputArea>
+                        <i><FiSearch size="13" color="#c4c4c4"/></i>
+                        <input type="text" value={inputText} onChange={handleInputText} placeholder="Search Symbol"/>
+                    </InputArea>
+                    <div className="item" id="All Symbols" onClick={clickItem}>All Symbols</div>
+                    {inputText ? searchedItems.map((item) => <div className="item" id={item} onClick={clickItem}>{item}</div>) : items.map((item) => <div className="item" id={item} onClick={clickItem}>{item}</div>)}
                 </ItemsArea>
             }
             
@@ -58,7 +60,7 @@ const SelectItemBox = styled.div`
     color: #7a7a7a;
     font-weight: bold;
     text-align: left;
-    padding: 10px; 0 0 10px;
+    padding: 10px 0 0 10px;
 
     i {
         position: absolute;
@@ -73,21 +75,9 @@ const ItemsArea = styled.div`
     height: 305px;
     border: 1px solid #DFDFDF;
     border-radius: 5px;
-    
-    input {
-        width: 85%;
-        height: 30px;
-        border: none;
-        border-bottom: 1px solid #c4c4c4;
-        padding: 0 0 0 35px;
-        &::placeholder {
-            color: #c4c4c4;
-        }
-    } 
 
-    div {
+    .item {
         width: 207px;
-        list-style: none;
         padding: 10px 20px;
         font-size: 13px;
         color: #7a7a7a;
@@ -99,9 +89,22 @@ const ItemsArea = styled.div`
         }
     }
 
-    i {
-        position: absolute;
-        bottom: 92px;
-        left: 50px;
-    }
+    
+`;
+
+const InputArea = styled.div`
+    display: flex;
+    border-bottom: 1px solid #c4c4c4;
+    align-items: center;
+    padding: 0 0 0 10px;
+
+    input {
+        width: 86%;
+        height: 35px;
+        border: none;
+        padding: 0 0 0 5px;
+        &::placeholder {
+            color: #c4c4c4;
+        }
+} 
 `;
