@@ -48,7 +48,7 @@ export default function Input() {
 
 const InputBox = styled.div`
     width: 350px;
-    margin: 30px;
+    margin: 70px;
 `;
 
 const InputArea = styled.div`

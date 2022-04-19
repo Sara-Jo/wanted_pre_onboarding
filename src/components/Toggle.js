@@ -17,7 +17,7 @@ const ToggleButton = styled.div`
     height: 50px;
     border-radius: 40px;
     background-color: #EBEBEB;
-    margin: 10px;
+    margin: 70px;
     cursor: pointer;
     display: flex;
     align-items: center;

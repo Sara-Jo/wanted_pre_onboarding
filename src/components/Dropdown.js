@@ -22,8 +22,8 @@ export default function Dropdown({ items }) {
     return (
         <DropdownBox>
             <SelectItemBox onClick={() => setToggle(true)}>
-                {selectedItem}
-                <i><AiFillCaretDown /></i>
+                <div className="selectedItem">{selectedItem}</div>
+                <div><i><AiFillCaretDown /></i></div>
             </SelectItemBox>
             {toggle &&
                 <ItemsArea>
@@ -43,29 +43,31 @@ export default function Dropdown({ items }) {
 const DropdownBox = styled.div`
     width: 250px;
     height: 350px;
-    background-color: #F6F6F6;
-    margin: 30px;
+    margin: 70px;
     padding: 5px;
 `;
 
 const SelectItemBox = styled.div`
     border: 1px solid #DFDFDF;
     border-radius: 5px;
-    width: 228px;
+    width: 237px;
     height: 19px;
     cursor: pointer;
     background-color: #FCFCFC;
     margin-bottom: 5px;
-    font-size: 13px;
-    color: #7a7a7a;
-    font-weight: bold;
     text-align: left;
-    padding: 10px 0 0 10px;
+    padding: 10px 0 5px 10px;
+    display: flex;
+    color: #7a7a7a;
+    font-size: 13px;
+    justify-content: space-between;
+
+    .selectedItem{
+        font-weight: bold;
+    }
 
     i {
-        position: absolute;
-        left: 260px;
-        top: 540px;
+        margin: 10px;
     }
 `;
 

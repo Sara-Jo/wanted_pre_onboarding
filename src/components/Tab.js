@@ -18,7 +18,7 @@ const TabBox = styled.div`
     width: 450px;
     height: 40px;
     display: flex;
-    margin: 30px;
+    margin: 70px;
     cursor: pointer;
 `;
 

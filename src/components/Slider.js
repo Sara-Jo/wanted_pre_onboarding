@@ -34,7 +34,7 @@ export default function Slider() {
 
 const SliderBox = styled.div`
     width: 400px;
-    margin: 30px;
+    margin: 70px;
 `;
 
 const DisplayBox = styled.div`
