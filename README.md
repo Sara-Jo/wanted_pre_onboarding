@@ -1,5 +1,7 @@
 # 원티드 프리온보딩 코스
 
+## [구현 화면 보기](https://sara-jo.github.io/wanted_pre_onboarding/)
+
 ## Toggle.js
 
 ### 핵심요소
